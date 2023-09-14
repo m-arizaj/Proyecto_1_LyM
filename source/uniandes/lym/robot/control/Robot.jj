@@ -131,8 +131,8 @@ TOKEN :
 		|  <PUT> "("  put() ")"					  			
 		|  <PICK> "(" get()  ")"	
 	    |  < POP > "(" x=num() ")" {world.popBalloons(x); salida = "Comando:  Pop";}
-	    | <JUMP> "(" x=num() "," y=num()")" { world.setPostion(x,y);salida ="Command:Jump ";}
-	    
+	    | <JUMP> "(" jump() ")" 
+	    | <WALK> "(" x=num() ")" {world.moveForward(x,false);salida = "Command: Walk" ;}	
 		) ";" 
 
 	(	)
@@ -170,6 +170,15 @@ TOKEN :
 
 	}
 
+	void jump() :
+	{
+		int f=1;
+		int y=1;	
+	}
+	{
+		( f=num() "," y=num() {world.setPostion(x,y);salida ="Command:Jump ";})	 
+
+	}
 	
 	
 
