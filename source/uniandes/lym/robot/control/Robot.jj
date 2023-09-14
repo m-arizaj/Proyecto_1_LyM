@@ -132,6 +132,7 @@ TOKEN :
 		|  <PICK> "(" get()  ")"	
 	    |  < POP > "(" x=num() ")" {world.popBalloons(x); salida = "Comando:  Pop";}
 	    | <JUMP> "(" x=num() "," y=num()")" { world.setPostion(x,y);salida ="Command:Jump ";}
+	    
 		) ";" 
 
 	(	)
